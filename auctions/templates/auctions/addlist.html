@@ -1,0 +1,33 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<form enctype="multipart/form-data" method="post" >
+    {% csrf_token %}
+
+    <ul class="list-group">
+        <li class="list-group-item">Fill the Details: </li>
+      
+        
+        <li class="list-group-item list-group-item-primary">Title:   {{form.title}} </li>
+       
+        <li class="list-group-item list-group-item-secondary"> Select Image:  {{form.photo}}</li>
+        
+        <li class="list-group-item list-group-item-success">Select Date:  {{form.date}}</li>
+        
+        <li class="list-group-item list-group-item-danger">Select Category:  {{form.category}}</li>
+        
+        <li class="list-group-item list-group-item-warning">Description:   {{form.description}}</li>
+       
+        <li class="list-group-item list-group-item-info">Price: {{form.price}}</li>
+        
+        <li class="list-group-item list-group-item-dark">Your Username:   {{form.user_id}}</li>
+      </ul>
+
+
+      <button type="submit" class="btn btn-primary btn-lg">Save</button>
+</form>
+
+
+
+
+{% endblock %}

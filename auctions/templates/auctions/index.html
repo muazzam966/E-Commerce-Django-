@@ -1,0 +1,37 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+    <!-- <ul>
+    {% for list in item %} 
+       <li><img src="{{ list.photo.url }}" width ="300px">
+        <a href="{% url 'listingpage' list.id %}">{{list.title}} </a>
+        {{list.title}}     
+      {{list.id}}</li>
+    </ul>
+    {% endfor %} -->
+
+
+
+  <div class="container" id="listings">
+    {% for i in item %}
+    <div class="card mb-3" style="max-width: 540px;" >
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{{ i.photo.url }}" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><a href="{% url 'listingpage' i.id %}">{{i.title}}</a></h5>
+              <p class="card-text">{{i.description}}</p>
+              <p class="card-text">${{i.price}}</p>
+              
+              <p class="card-text"><small class="text-muted">{{i.date}}</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+{% endblock %}
+
